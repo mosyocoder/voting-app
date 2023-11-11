@@ -4,12 +4,12 @@ import { getMainDefinition } from "@apollo/client/utilities";
 import { createClient } from "graphql-ws";
 
 const httpLink = createHttpLink({
-	uri: `https://${process.env.REACT_APP_HASURA_LINK}`,
+uri: `https://${process.env.REACT_APP_HASURA_LINK}/v1/graphql`,
 });
 
 const wsLink = new GraphQLWsLink(
 	createClient({
-		url: "wss://voting-app-mosyo.hasura.app/v1/graphql",
+		url: `wss://${process.env.REACT_APP_HASURA_LINK}/v1/graphql`,
 		connectionParams: {
 			headers: {
 				"x-hasura-admin-secret": process.env.REACT_APP_HASURA_ADMIN_SECRET,
