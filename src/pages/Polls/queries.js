@@ -6,6 +6,13 @@ export const GET_ALL_POLLS = gql`
 			id
 			title
 			created_at
+			options {
+				votes_aggregate {
+					aggregate {
+						count
+					}
+				}
+			}
 		}
 	}
 `;
