@@ -25,8 +25,7 @@ function NewPoll() {
 
 		try {
 			await axios
-				.post(
-					"https://voting-app-mosyo.hasura.app/api/rest/addpoll",
+				.post(`https://${process.env.REACT_APP_HASURA_LINK}/api/rest/addpoll`,
 					{
 						data,
 					},
