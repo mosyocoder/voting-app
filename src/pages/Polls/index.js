@@ -16,8 +16,8 @@ function Polls() {
 
 	const pollData = [];
 
-	data.polls.forEach((item) => {
-		const date = moment().add(item.created_at);
+    data.polls.forEach((item) => {
+		const date = moment(item.created_at);
 		var totalVotes = 0;
 		item.options.forEach((vote) => {
 			totalVotes += vote.votes_aggregate.aggregate.count;
@@ -28,10 +28,10 @@ function Polls() {
 			created_at: date.format("MMMM Do YYYY, h:mm:ss a"),
 			totalVotes,
 		});
-	});
+    });
 
-	return (
-		<Table dataSource={pollData} pagination={false} rowKey="id" bordered={true}>
+    return (
+		<Table dataSource={pollData} pagination={false} rowKey="id" bordered={true} className="table">
 			<Column title="Title" key="title" dataIndex="title" />
 			<Column align="center" title="Created at" key="created_at" dataIndex="created_at" />
 			<Column align="center" title="Total Votes" key="total_votes" render={(item) => (item.totalVotes === 0 ? <>No votes yet.</> : <Badge count={item.totalVotes} />)} />
@@ -48,7 +48,7 @@ function Polls() {
 				)}
 			/>
 		</Table>
-	);
+    );
 }
 
 export default Polls;

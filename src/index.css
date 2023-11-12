@@ -21,6 +21,11 @@ body {
     margin: 15px auto;
 }
 
+.table{
+    overflow: auto;
+    max-height: 600px;
+}
+
 .poll_title{
     display: flex;
     align-items: center;    
@@ -29,4 +34,45 @@ body {
 
 .arrow > a{
     color: black;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#badge{
+    margin-left: 10px;
+}
+
+.pollContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.icerik{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.ant-radio-group{
+    font-size: 20px;
+}
+
+.votesDetail{
+    text-align: center;
+    margin-left: 10px;
+}
+
+.voteButton{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
